@@ -4,6 +4,14 @@
 #include <unistd.h>
 
 #define MAX_COMMAND_LENGTH 100
+/**
+ *void display_prompt(): Displays the shell prompt (simple_shell$ ) on the console.
+ *Parameters: None
+ *void remove_newline(char *str): A helper funct to remove the trailing newline character from the user input.
+ *str: A pointer to the character array (string) containing the user input.
+ *int main(): The main function that runs the shell's main loop, waiting for user commands and executing them.
+ *Returns: An integer value (0) to indicate successful execution
+ */
 
 void display_prompt() {
 printf("simple_shell$ ");
