@@ -230,5 +230,57 @@ int replace_alias(info_t *);
 int replace_vars(info_t *);
 int replace_string(char **, char *);
 
+// Prompt
+void display_prompt();
+
+// Command Line Parsing
+char **split_command_arguments(char *command);
+void free_command_arguments(char **arguments);
+
+// Built-in Commands
+int is_exit_command(char *command);
+void execute_exit_command(char **arguments);
+int is_setenv_command(char *command);
+void execute_setenv_command(char **arguments);
+int is_unsetenv_command(char *command);
+void execute_unsetenv_command(char **arguments);
+void execute_env_command();
+int is_cd_command(char *command);
+void execute_cd_command(char **arguments);
+int is_alias_command(char *command);
+void execute_alias_command(char **arguments);
+
+// Command Execution
+char *get_command_path(char *command, char *path);
+int execute_command(char *command, char **arguments);
+
+// Main Loop
+int hsh(info_t *info, char **av);
+int find_builtin(info_t *info);
+void find_cmd(info_t *info);
+void fork_cmd(info_t *info);
+void execute_shell_script(info_t *info, char *script_path);
+
+// Prompt
+void display_prompt();
+
+// Command Line Parsing
+void split_command_arguments(char *command, char **arguments);
+void free_command_arguments(char **arguments);
+
+// Built-in Commands
+int is_exit_command(char *command);
+int execute_exit_command(char **arguments);
+int is_setenv_command(char *command);
+int execute_setenv_command(char **arguments);
+int is_unsetenv_command(char *command);
+int execute_unsetenv_command(char **arguments);
+
+// Execution of Environment Command
+void execute_env_command();
+
+// Main Loop
+int main();
+
 #endif
   
